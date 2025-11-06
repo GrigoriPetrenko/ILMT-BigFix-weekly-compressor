@@ -56,14 +56,12 @@ def rename_txt_to_csv(input_folder="Data export_processed"):
         print(f"Renaming: {txt_file.name}...", end=" ", flush=True)
         
         try:
-            # Check if .csv file already exists
+            # Remove existing .csv file so the rename always succeeds with fresh content
             if csv_file.exists():
-                print(f"✗ SKIPPED (file already exists: {csv_file.name})")
-                failed_files.append(txt_file.name)
-            else:
-                txt_file.rename(csv_file)
-                success_count += 1
-                print("✓")
+                csv_file.unlink()
+            txt_file.rename(csv_file)
+            success_count += 1
+            print("✓")
         except Exception as e:
             failed_files.append(txt_file.name)
             print(f"✗ ERROR: {e}")
@@ -97,4 +95,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
