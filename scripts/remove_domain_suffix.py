@@ -149,23 +149,23 @@ def process_all_files_in_folder(input_folder="Data export", output_folder_suffix
             try:
                 output_file.write_text(input_file.read_text(encoding="utf-8"), encoding="utf-8")
                 success_count += 1
-                print("(copied) ✓")
+                print("(copied) OK")
                 continue
             except Exception as copy_exc:
                 failed_files.append(input_file.name)
-                print(f"✗ ERROR copying: {copy_exc}")
+                print(f"ERROR copying: {copy_exc}")
                 continue
         
         try:
             if remove_domain_suffix_from_computer_name(str(input_file), str(output_file), verbose=False):
                 success_count += 1
-                print("✓")
+                print("OK")
             else:
                 failed_files.append(input_file.name)
-                print("✗ FAILED")
+                print("FAILED")
         except Exception as e:
             failed_files.append(input_file.name)
-            print(f"✗ ERROR: {e}")
+            print(f"ERROR: {e}")
     
     print("-" * 60)
     print(f"Processing complete: {success_count}/{len(txt_files)} files processed successfully")

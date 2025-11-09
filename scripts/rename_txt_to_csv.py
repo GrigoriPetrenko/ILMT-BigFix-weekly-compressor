@@ -61,10 +61,10 @@ def rename_txt_to_csv(input_folder="Data export_processed"):
                 csv_file.unlink()
             txt_file.rename(csv_file)
             success_count += 1
-            print("✓")
+            print("OK")
         except Exception as e:
             failed_files.append(txt_file.name)
-            print(f"✗ ERROR: {e}")
+            print(f"ERROR: {e}")
     
     print("-" * 60)
     print(f"Renaming complete: {success_count}/{len(txt_files)} files renamed successfully")

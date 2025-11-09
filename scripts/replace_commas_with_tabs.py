@@ -114,13 +114,13 @@ def process_all_files_in_folder(input_folder="Data export_processed"):
         try:
             if replace_commas_with_tabs(str(input_file), str(input_file), verbose=False):
                 success_count += 1
-                print("✓")
+                print("OK")
             else:
                 failed_files.append(input_file.name)
-                print("✗ FAILED")
+                print("FAILED")
         except Exception as e:
             failed_files.append(input_file.name)
-            print(f"✗ ERROR: {e}")
+            print(f"ERROR: {e}")
     
     print("-" * 60)
     print(f"Processing complete: {success_count}/{len(txt_files)} files processed successfully")
