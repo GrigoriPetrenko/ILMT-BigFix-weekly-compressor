@@ -15,9 +15,9 @@ def run_scripts_with_delay(delay_seconds: int = 2) -> int:
     root_dir = Path(__file__).resolve().parent
     scripts_dir = root_dir / "scripts"
     scripts = [
-        ("remove_domain_suffix.py", []),
-        ("replace_commas_with_tabs.py", []),
-        ("rename_txt_to_csv.py", []),
+        ("main_005_remove_domain_suffix.py", []),
+        ("main_010_replace_commas_with_tabs.py", []),
+        ("main_015_rename_txt_to_csv.py", []),
     ]
 
     for index, (script_name, extra_args) in enumerate(scripts):
