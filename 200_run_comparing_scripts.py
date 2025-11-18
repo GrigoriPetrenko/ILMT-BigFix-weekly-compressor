@@ -14,8 +14,8 @@ def run_main_scripts(delay_seconds: int = 2) -> int:
 
     root_dir = Path(__file__).resolve().parent / "scripts"
     scripts = [
-        ("005_tag_cmdb_status.py", []),
-        ("010_tag_not_reporting.py", []),
+        ("005_tag_not_reporting.py", []),
+        ("010_tag_cmdb_status.py", []),
         ("015_tag_delayed_upload.py", []),
         ("020_tag_failed_scan.py", []),
         ("025_tag_missing_scan.py", []),
